@@ -132,7 +132,7 @@
 }
 
 .gallery__image-container {
-  height: 300px;
+  height: 350px;
   width: 100%;
   background-image: url(../img/Air\ jordan-1.png);
   background-position-y: -50px;
@@ -431,6 +431,12 @@ body {
 
 .show {
   display: block;
+}
+
+.cart-empty {
+  text-align: center;
+  font-weight: 700;
+  margin-top: 30px;
 }
 
 /*# sourceMappingURL=style.css.map */
