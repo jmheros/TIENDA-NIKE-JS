@@ -28,15 +28,22 @@ let lastValue = parseInt(cartNotification.innerText);
 function carrito() {
     addToCartBtn.addEventListener("click", () => {
         lastValue = lastValue + userInputNumber;
+        localStorage.setItem('bagvalue',lastValue);
 
         cartNotification.innerText = lastValue;
         cartNotification.style.display = "block";
         drawModal();
+    
 
     });
 }
 
 carrito();
+
+let guardadoCartnotification = parseInt (localStorage.getItem('bagvalue'));
+
+
+
 
 /* MODAL CARRITO */
 
@@ -52,6 +59,7 @@ bagIconBtn.addEventListener("click", () => {
         productContainer.innerHTML = '<p class="cart-empty">Tu Shop bag esta vacia</p>';
     } else {
         drawModal()
+
     }
 });
 
@@ -65,6 +73,7 @@ function deleteProduct() {
             '<p class="cart-empty">Tu Shop bag esta vacia</p>';
         lastValue = 0;
         cartNotification.innerText = lastValue;
+        localStorage.clear()
     });
 }
 
@@ -88,6 +97,7 @@ function drawModal() {
     let priceModal = document.querySelector(".cart-modal__price");
     priceModal.innerHTML = `$57.000 x${lastValue} <span>$${lastValue * 57
         }.000</span>`;
+        
 
 }
 
@@ -148,3 +158,13 @@ function changePreviusImg(imageContainer) {
 
     imageContainer.style.backgroundImage = `url('../img/Air\ jordan-${imgIndex}.png')`
 }
+
+
+window.onload = ()=>{
+    if(guardadoCartnotification){
+        cartNotification.innerText = guardadoCartnotification;
+        cartNotification.style.display = "block";
+        lastValue = guardadoCartnotification;
+        
+}  }
+
