@@ -120,21 +120,7 @@ function menuHamburgesa() {
 
 menuHamburgesa();
 
-/* GALLERY MOVIL */
 
-const imageContainer = document.querySelector('.gallery__image-container');
-const previusBtn = document.querySelector('.gallery__previus');
-const nextBtn = document.querySelector('.gallery__next');
-let imgIndex = 1;
-
-
-nextBtn.addEventListener('click', () => {
-    changeNextImg(imageContainer)
-})
-
-previusBtn.addEventListener('click', () => {
-    changePreviusImg(imageContainer)
-})
 
 /* FUNCIONES GALLERY */
 
@@ -158,6 +144,22 @@ function changePreviusImg(imageContainer) {
 
     imageContainer.style.backgroundImage = `url('../img/Air\ jordan-${imgIndex}.png')`
 }
+
+/* GALLERY MOVIL */
+
+const imageContainer = document.querySelector('.gallery__image-container');
+const previusBtn = document.querySelector('.gallery__previus');
+const nextBtn = document.querySelector('.gallery__next');
+let imgIndex = 1;
+
+
+nextBtn.addEventListener('click', () => {
+    changeNextImg(imageContainer)
+})
+
+previusBtn.addEventListener('click', () => {
+    changePreviusImg(imageContainer)
+})
 
 
 window.onload = ()=>{
