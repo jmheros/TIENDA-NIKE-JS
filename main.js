@@ -161,7 +161,20 @@ previusBtn.addEventListener('click', () => {
     changePreviusImg(imageContainer)
 })
 
+/* GALLERY DESKTOP */
 
+let thumbnails = document.querySelectorAll('.gallery__thumnail');
+thumbnails = [...thumbnails]
+
+thumbnails.forEach(thumbnail =>{
+    thumbnail.addEventListener('click',event=>{
+        console.log(event.target.id)
+        imageContainer.style.backgroundImage = `url('../img/Air\ jordan-${event.target.id}.png')`
+    })
+})
+
+
+/* MOSTRAR CARRITO DEL LOCALSTOREGE */
 window.onload = ()=>{
     if(guardadoCartnotification){
         cartNotification.innerText = guardadoCartnotification;
