@@ -63,6 +63,7 @@
     }
     &__avatar{
         width: 36px;
+        display: none;
         @media (min-width:1115px){
             width: 42px;
         }
@@ -70,6 +71,15 @@
             cursor: pointer;
             border: 2px solid variables.$black;
             border-radius: 50%;
+        }
+    }
+    &__login{
+        width: 36px;
+        @media (min-width:1115px){
+            width: 42px;
+        }
+        &:hover{
+            cursor: pointer;
         }
     }
 }

@@ -63,6 +63,7 @@
 }
 .header__avatar {
   width: 36px;
+  display: none;
 }
 @media (min-width: 1115px) {
   .header__avatar {
@@ -73,6 +74,17 @@
   cursor: pointer;
   border: 2px solid #111;
   border-radius: 50%;
+}
+.header__login {
+  width: 36px;
+}
+@media (min-width: 1115px) {
+  .header__login {
+    width: 42px;
+  }
+}
+.header__login:hover {
+  cursor: pointer;
 }
 
 .navbar {
@@ -439,4 +451,51 @@ body {
   margin-top: 30px;
 }
 
+/* CARDS FETCH */
+
+
+.card-container__description img{
+  width: 50px;
+  height: 50px;
+}
+
+.card-container__description{
+  display: flex;
+  gap: 5px;
+  height: 40px;
+}
+
+.card-container__img-product img{
+  width: 372px;
+  height: 372px;
+}
+
+  
+  
+
+.card-container{
+  
+  width: 375px;
+  height: 560px;
+  display: flex;
+  flex-direction: column;
+  
+}
+#zapatillas{
+  display: grid;
+  grid-template-columns: repeat(3, 350px);
+  grid-template-rows: 1fr;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 10px;
+  
+  column-gap: 8%;
+}
+
+.card-container .cart-modal__Checkout{
+  width: 100px;
+  height: 30px;
+  margin-top: 5px;
+  
+}
 /*# sourceMappingURL=style.css.map */
