@@ -499,3 +499,17 @@ body {
   
 }
 /*# sourceMappingURL=style.css.map */
+
+@media (max-width:1290px){
+  #zapatillas{
+    grid-template-columns: repeat(2, 350px);
+    gap: 12%;
+  }
+}
+
+@media (max-width:1115px){
+  #zapatillas{
+    grid-template-columns: 350px;
+    gap: 0;
+  }
+}

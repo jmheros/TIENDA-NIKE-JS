@@ -1,12 +1,15 @@
 const items = document.getElementById('zapatillas')
 const templateCard = document.getElementById('cartas').content
 const fragment = document.createDocumentFragment();
+let bag = {}
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchdata()
 })
 
-
+items.addEventListener('click', e => {
+    addBag(e)
+})
 
 const fetchdata = async () => {
     try {
@@ -37,3 +40,55 @@ const drawProduct = data => {
 }
 
 
+const addBag = e => {
+
+    if (e.target.classList.contains('cart-modal__Checkout')) {
+        setBag(e.target.parentElement)
+    }
+}
+
+let cartNotification = document.querySelector(".header__cart--notification");
+let lastValue = parseInt(cartNotification.innerText);
+
+const setBag = objeto => {
+    const producto = {
+        id: objeto.querySelector('.cart-modal__Checkout').dataset.id,
+        nombre: objeto.querySelector('h2').textContent,
+        precio: objeto.querySelector('p').textContent,
+        cantidad: 1
+
+    }
+    if (bag.hasOwnProperty(producto.id)) {
+        producto.cantidad = bag[producto.id].cantidad + 1
+        
+    }
+
+    bag[producto.id] = { ...producto }
+    console.log(bag)
+}
+
+
+/* MODAL CARRITO */
+
+
+
+
+
+
+/* * MENU HAMBURGESA */
+
+function menuHamburgesa() {
+    let menuIcon = document.querySelector(".header__menu");
+    let closeIcon = document.querySelector(".modal-navbar__close-icon");
+    let modalNavbar = document.querySelector(".modal-navbar__background");
+
+    menuIcon.addEventListener("click", () => {
+        modalNavbar.style.display = "block";
+    });
+
+    closeIcon.addEventListener("click", () => {
+        modalNavbar.style.display = "none";
+    });
+}
+
+menuHamburgesa();
